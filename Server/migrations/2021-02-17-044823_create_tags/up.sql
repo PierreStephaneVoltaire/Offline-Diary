@@ -1,10 +1,10 @@
 -- Your SQL goes here
 CREATE TABLE `tags`
 (
-    `id`        numeric NOT NULL PRIMARY KEY,
+    `id`        integer  PRIMARY KEY  AUTOINCREMENT ,
     `name`      text    NOT NULL,
-    `person_fk` numeric NULL,
-    `entry_fk`  numeric NULL,
+    `person_fk` integer NULL,
+    `entry_fk`  integer NULL,
 
 
     FOREIGN KEY  (`person_fk`) REFERENCES `person` (`id`),

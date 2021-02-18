@@ -1,8 +1,8 @@
 -- Your SQL goes here
 CREATE TABLE `mentions`
 (
-    `entry`  numeric NOT NULL,
-    `person` numeric NOT NULL,
+    `entry`  integer NOT NULL,
+    `person` integer NOT NULL,
 
     PRIMARY KEY (`entry`, `person`),
     FOREIGN KEY  (`entry`) REFERENCES `entries` (`id`),

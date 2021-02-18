@@ -2,7 +2,7 @@
 node_modules
 /dist
 **/target
-
+**.sqlite3
 
 # local env files
 .env.local

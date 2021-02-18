@@ -3,7 +3,7 @@
 
 CREATE TABLE `password`
 (
-    `id`           numeric NOT NULL ,
+    `id`           integer  PRIMARY KEY  AUTOINCREMENT  ,
     `passwordval`     text    NOT NULL,
     `q1`           text    NOT NULL,
     `q2`           text    NOT NULL,
@@ -11,8 +11,7 @@ CREATE TABLE `password`
     `a1`           text    NOT NULL,
     `a2`           text    NOT NULL,
     `a3`           text    NOT NULL,
-    `wipe_attempt` numeric NOT NULL DEFAULT 3,
-    PRIMARY KEY (`id`)
+    `wipe_attempt` integer NOT NULL DEFAULT 3
 );
 
 

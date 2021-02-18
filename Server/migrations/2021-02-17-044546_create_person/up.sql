@@ -1,7 +1,7 @@
 
 CREATE TABLE `person`
 (
-    `id`          numeric NOT NULL PRIMARY KEY,
+    `id`          integer  PRIMARY KEY  AUTOINCREMENT ,
     `name`        text    NOT NULL,
     `description` text NULL,
     `image`       text NULL

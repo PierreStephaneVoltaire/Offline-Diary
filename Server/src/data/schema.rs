@@ -1,6 +1,6 @@
 table! {
     links (id) {
-        id -> Nullable<Integer>,
+        id -> Integer,
         link -> Text,
         person_fk -> Integer,
     }
@@ -15,14 +15,14 @@ table! {
 
 table! {
     mood (id) {
-        id -> Nullable<Integer>,
+        id -> Integer,
         name -> Text,
     }
 }
 
 table! {
     nicknames (id) {
-        id -> Nullable<Integer>,
+        id -> Integer,
         nickname -> Text,
         person_fk -> Integer,
     }
@@ -30,7 +30,7 @@ table! {
 
 table! {
     password (id) {
-        id -> Nullable<Integer>,
+        id -> Integer,
         passwordval -> Text,
         q1 -> Text,
         q2 -> Text,
@@ -44,7 +44,7 @@ table! {
 
 table! {
     person (id) {
-        id -> Nullable<Integer>,
+        id -> Integer,
         name -> Text,
         description -> Nullable<Text>,
         image -> Nullable<Text>,
@@ -53,7 +53,7 @@ table! {
 
 table! {
     preferences (id) {
-        id -> Nullable<Integer>,
+        id -> Integer,
         autosave -> Nullable<Integer>,
         autolock_interval -> Integer,
         backup -> Nullable<Integer>,
@@ -76,7 +76,7 @@ table! {
 
 table! {
     tags (id) {
-        id -> Nullable<Integer>,
+        id -> Integer,
         name -> Text,
         person_fk -> Nullable<Integer>,
         entry_fk -> Nullable<Integer>,
@@ -85,7 +85,7 @@ table! {
 
 table! {
     themes (id) {
-        id -> Nullable<Integer>,
+        id -> Integer,
         name -> Text,
         main_color -> Text,
         font_family -> Text,
@@ -95,7 +95,7 @@ table! {
 
 table! {
     users (id) {
-        id -> Nullable<Integer>,
+        id -> Integer,
         name -> Text,
         gdrive -> Text,
         password -> Integer,

@@ -1,7 +1,7 @@
 
 CREATE TABLE `mood`
 (
-    `id`   numeric NOT NULL PRIMARY KEY,
+    `id`   integer PRIMARY KEY  AUTOINCREMENT ,
     `name` text    NOT NULL
 
 );

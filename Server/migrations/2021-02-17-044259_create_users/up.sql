@@ -4,10 +4,10 @@
 
 CREATE TABLE `users`
 (
-    `id`       numeric NOT NULL PRIMARY KEY,
+    `id`       integer    PRIMARY KEY AUTOINCREMENT,
     `name`     text    NOT NULL,
     `gdrive`   TEXT        NOT NULL,
-    `password` numeric NOT NULL,
+    `password` integer NOT NULL,
     FOREIGN KEY  (`password`) REFERENCES `password` (`id`)
 );
 

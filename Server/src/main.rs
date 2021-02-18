@@ -6,17 +6,33 @@
 #[macro_use]
 extern crate diesel;
 
-use actix_web::{get, middleware, post, web, App, Error, HttpResponse, HttpServer};
+use actix_web::{get, middleware, post, web, App, Error, HttpResponse, HttpServer, HttpRequest};
 use diesel::prelude::*;
 use diesel::r2d2::{self, ConnectionManager};
 use uuid::Uuid;
+use crate::apimodels::CreateUser;
+use crate::data::actions::insert_new_user;
 
-mod models;
-mod schema;
+mod data;
+mod apimodels;
+
 
 type DbPool = r2d2::Pool<ConnectionManager<SqliteConnection>>;
 
+#[post("/user")]
+async fn create_user(pool: web::Data<DbPool>,
+                                      post: web::Json<CreateUser>, req: HttpRequest) -> Result<HttpResponse, Error> {
+    let conn = pool.get().expect("couldn't get db connection from pool");
 
+    let post = web::block(move || insert_new_user(&conn, post.0))
+        .await
+        .map_err(|e| {
+            HttpResponse::InternalServerError().finish()
+        })?;
+    println!("model: {:?}", post);
+
+    Ok(HttpResponse::Ok().json(post))
+}
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     std::env::set_var("RUST_LOG", "actix_web=info");
@@ -40,7 +56,7 @@ async fn main() -> std::io::Result<()> {
             // set up DB pool to be used with web::Data<Pool> extractor
             .data(pool.clone())
             .wrap(middleware::Logger::default())
-
+            .service(create_user)
     })
         .bind(&bind)?
         .run()
