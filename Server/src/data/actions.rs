@@ -28,14 +28,14 @@ pub fn insert_new_user(
     };
 
     let user_password = models::CreatePassword {
-        passwordval: "".to_string(),
-        q1: "".to_string(),
-        q2: "".to_string(),
-        q3: "".to_string(),
-        a1: "".to_string(),
-        a2: "".to_string(),
-        a3: "".to_string(),
-        wipe_attempt: 0,
+        passwordval: user.password.to_string(),
+        q1: user.q1.to_string(),
+        q2: user.q2.to_string(),
+        q3: user.q3.to_string(),
+        a1: user.a1.to_string(),
+        a2: user.a2.to_string(),
+        a3: user.a3.to_string(),
+        wipe_attempt: user.wipe_attempt
     };
     let password_res = insert_new_password(conn, user_password).unwrap();
 

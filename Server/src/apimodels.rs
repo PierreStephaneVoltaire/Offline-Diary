@@ -14,6 +14,14 @@ use crate::data::schema::*;
 pub struct CreateUser {
     pub(crate) name: String,
     pub(crate) gdrive: String,
+    pub     password: String,
+    pub     q1: String,
+    pub     q2: String,
+    pub     q3: String,
+    pub    a1: String,
+    pub    a2: String,
+    pub    a3: String,
+    pub    wipe_attempt : i32,
 }
 
 impl CreateUser {
