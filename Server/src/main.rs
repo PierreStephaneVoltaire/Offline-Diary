@@ -11,10 +11,11 @@ use diesel::prelude::*;
 use diesel::r2d2::{self, ConnectionManager};
 use uuid::Uuid;
 use crate::apimodels::CreateUser;
-use crate::data::actions::insert_new_user;
+use crate::handlers::user_handler::insert_new_user;
 
 mod data;
 mod apimodels;
+mod handlers;
 
 
 type DbPool = r2d2::Pool<ConnectionManager<SqliteConnection>>;

@@ -7,8 +7,8 @@ use diesel::result::Error;
 use crate::apimodels::CreateUser;
 use crate::data;
 use crate::data::models;
-use crate::data::password::insert_new_password;
 use crate::data::schema;
+use crate::handlers::password_handler::insert_new_password;
 
 /// Run query using Diesel to insert a new database row and return the result.
 pub fn insert_new_user(

@@ -114,16 +114,25 @@ pub struct    tags  {
 
 }
 
-#[derive(Debug, Clone, Serialize, Queryable)]
+#[derive(Debug, Clone, Serialize, Queryable,Insertable)]
 
-pub struct   themes  {
+pub struct   theme  {
         id : i32,
         name: String,
         main_color: String,
         font_family: String,
-        serif :bool,
+        serif :i32,
     }
 
+#[derive(Debug, Clone, Serialize, Queryable,Insertable)]
+#[table_name = "themes"]
+pub struct   create_themes  {
+        id : i32,
+        name: String,
+        main_color: String,
+        font_family: String,
+        serif :i32,
+}
 
 
 #[derive(Debug, Clone, Serialize, Queryable)]
