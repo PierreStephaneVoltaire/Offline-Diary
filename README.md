@@ -1,5 +1,22 @@
-# life-of-a-simp
+# Offline Diary
 
+## description
+diary application that lets the user write diary entries and log daily overall mood
+## features
+- [ ] user login (offline)
+- [ ] diary entry management
+- [ ] mood management
+- [ ] spendings management
+- [ ] `people` glossary
+- [ ] nickname based mentions
+- [ ] wipe on n failed password attempts
+- [ ] export to google drive
+- [ ] online save/sync/share accross devices
+- [ ] themes and customization 
+## dev dependacies
+- node
+- rust
+- sqlite3
 ## Project setup
 ```
 yarn install
