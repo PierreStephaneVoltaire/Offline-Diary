@@ -25,14 +25,14 @@ jobs:
 #         WAKATIME_API_KEY: 
 #         # Github token of the repo for the authentication
 #        REPO_TOKEN: 
-    - name: SQLCheck Action
-      uses: yokawasa/action-sqlcheck@v1.3.0
+#     - name: SQLCheck Action
+#       uses: yokawasa/action-sqlcheck@v1.3.0
     - name: Setup Rust
       uses: ATiltedTree/setup-rust@v1.0.4
       with:
         # The version to install
         rust-version:  1.49.0 
-    - name: Build
-      run: cargo build --verbose
-    - name: Run tests
-      run: cargo test --verbose
+#     - name: Build
+#       run: cd cargo build --verbose
+#     - name: Run tests
+#       run: cargo test --verbose
